@@ -1,8 +1,9 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { Typewriter } from 'react-simple-typewriter'
+import type { ReactNode } from 'react'
 
-export default function Hero() {
+export default function Hero({ children }: { children?: ReactNode }) {
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center text-center px-4 bg-gray-950 text-white overflow-hidden">
       
@@ -58,6 +59,13 @@ export default function Hero() {
           Minha alma é desenvolvedora. Simples assim. Sou o Murilo, desenvolvedor apaixonado por código, café e paz.
         </p>
       </motion.div>
+
+      {/* Children renderizado aqui, tipo o botão */}
+      {children && (
+        <div className="mt-8">
+          {children}
+        </div>
+      )}
     </section>
   )
 }
