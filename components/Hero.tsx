@@ -1,3 +1,4 @@
+// components/Hero.tsx
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { Typewriter } from 'react-simple-typewriter'
