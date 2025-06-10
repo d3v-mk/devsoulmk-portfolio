@@ -32,7 +32,7 @@ const SectionProjetos = forwardRef<HTMLElement, SectionProjetosProps>(
         </motion.h2>
 
         <p className="max-w-3xl text-lg text-gray-400 text-center mx-auto mb-16">
-          Ideias que saíram do papel, passaram pelo terminal e ganharam vida na web.
+          Ideias que saíram do papel, passaram pelo terminal e ganharam vida.
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">

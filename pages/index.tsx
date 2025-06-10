@@ -10,10 +10,6 @@ import { skills, projetos } from '../data/portfolio'
 export default function Home() {
   const projetosRef = useRef<HTMLElement | null>(null)
 
-  const scrollToProjetos = () => {
-    projetosRef.current?.scrollIntoView({ behavior: 'smooth' })
-  }
-
   return (
     <>
       <Head>
@@ -53,7 +49,7 @@ export default function Home() {
       {/* Rodapé */}
       <footer className="bg-gray-900 text-white p-6 text-center">
         <p>
-          &copy; {new Date().getFullYear()} devsoulmk. Feito com café ☕ e Next.js 🚀
+          &copy; {new Date().getFullYear()} devmk. Feito com café ☕ e Next.js 🚀
         </p>
         <div className="mt-4 flex justify-center gap-4">
           <a

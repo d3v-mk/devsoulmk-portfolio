@@ -37,7 +37,7 @@ export const projetos: Projeto[] = [
     desc: 'Jetpack Compose que consome a API do backend para oferecer a experiência do usuário.',
     stack: ['Kotlin', 'Jetpack Compose'],
     repo: 'https://github.com/devsoulmk/portfolio',
-    imagem: 'https://source.unsplash.com/400x300/?portfolio,developer',
+    imagem: '/img/pano_front.jpeg',
   },
   {
     nome: 'Portfolio do Dev',
