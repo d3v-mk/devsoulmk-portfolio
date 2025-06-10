@@ -43,7 +43,7 @@ const SectionSobre = ({ skills }: SectionSobreProps) => (
     </motion.h2>
 
     <p className="max-w-3xl text-lg leading-relaxed text-gray-300 mb-8 text-center">
-      Meu nome é Murilo, mas a galera me chama de "MK".
+      Meu nome é Murilo, mas a galera me chama de MK.
       Tenho mais experiência no backend, mas também me aventuro no front quando a missão pede.
       Gosto de soluções simples, mas que funcionam.
       Curto transformar ideias em projetos.
