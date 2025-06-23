@@ -26,24 +26,41 @@ export const skills: Skill[] = [
 
 export const projetos: Projeto[] = [
   {
-    nome: 'PanoPoker backend',
-    desc: 'Repositório em Python com FastAPI, responsável pela lógica, regras de negócio, APIs e integração com banco de dados.',
-    stack: ['FastAPI', 'WebSocket'],
-    repo: 'https://github.com/d3v-mk/backend',
-    imagem: '/img/panopoker.png',
+    nome: 'The Gentlemans Club',
+    desc: 'Landing Page para barbearia, 100% responsiva',
+    stack: ['Vite', 'React', 'Tailwind'],
+    repo: 'https://github.com/d3v-mk/NaRegua/tree/main/backend',
+    imagem: '/img/thegent.png',
   },
   {
-    nome: 'Panopoker Frontend Android',
-    desc: 'Jetpack Compose que consome a API do backend para oferecer a experiência do usuário.',
+    nome: 'Panopoker Front Android',
+    desc: 'Simplesmente uma plataforma de poker online com real money para android desenvolvida 100% solo',
     stack: ['Kotlin', 'Jetpack Compose'],
-    repo: 'https://github.com/devsoulmk/portfolio',
+    repo: 'https://github.com/d3v-mk/backend',
     imagem: '/img/pano_front.jpeg',
   },
   {
-    nome: 'Portfolio do Dev',
-    desc: 'Esse mesmo portfólio aqui. Feito com carinho e Tailwind na veia.',
-    stack: ['Next.js', 'Framer Motion', 'Tailwind'],
-    repo: 'https://github.com/devsoulmk/portfolio',
-    imagem: 'https://source.unsplash.com/400x300/?portfolio,developer',
+    nome: 'Panopoker Front Web',
+    desc: 'Landing Page do game com fundo animado + paineis poderosos por trás (admin, promotores)',
+    stack: ['Vite', 'React', 'Tailwind'],
+    repo: 'https://github.com/d3v-mk/backend',
+    imagem: '/img/pano-front-web.png',
   },
+
+  {
+    nome: 'Lara Bot V1',
+    desc: 'Projeto que foi um trabalho em equipe. Trata-se de um bot para whatsapp que simula um jogo RPG',
+    stack: ['Kotlin', 'Jetpack Compose'],
+    repo: 'https://github.com/LeonelMiguins/lara-bot',
+    imagem: '/img/lara-bot.png',
+  },
+
+  {
+    nome: 'InsuCheck',
+    desc: 'Também desenvolvido em equipe. Trata-se de um app para diabéticos',
+    stack: ['Kotlin', 'Jetpack Compose'],
+    repo: 'https://github.com/Ameglebm/AppPipocaAgil',
+    imagem: '/img/insucheck.png',
+  },
+
 ]

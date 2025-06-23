@@ -58,11 +58,12 @@ const SectionSobre = ({ skills }: SectionSobreProps) => (
       Skills
     </motion.h3>
 
-    <p className="text-gray-400 text-sm mb-6 text-center max-w-xl">
+    <div className="text-gray-400 text-sm mb-6 text-center max-w-xl">
       Tecnologias que uso no dia a dia 
       <div />
       Da API ao layout, sempre buscando o equilíbrio entre performance e praticidade.
-    </p>
+    </div>
+
 
     <div className="flex flex-wrap justify-center gap-10 max-w-4xl">
       {skills.map(({ name, icon, isImg }) => (
