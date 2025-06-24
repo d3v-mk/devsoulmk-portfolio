@@ -39,28 +39,5 @@ export const projetos: Projeto[] = [
     repo: 'https://github.com/d3v-mk/backend',
     imagem: '/img/pano_front.jpeg',
   },
-  {
-    nome: 'Panopoker Front Web',
-    desc: 'Landing Page do game com fundo animado + paineis poderosos por trás (admin, promotores)',
-    stack: ['Vite', 'React', 'Tailwind'],
-    repo: 'https://github.com/d3v-mk/backend',
-    imagem: '/img/pano-front-web.png',
-  },
-
-  {
-    nome: 'Lara Bot V1',
-    desc: 'Projeto que foi um trabalho em equipe. Trata-se de um bot para whatsapp que simula um jogo RPG',
-    stack: ['Kotlin', 'Jetpack Compose'],
-    repo: 'https://github.com/LeonelMiguins/lara-bot',
-    imagem: '/img/lara-bot.png',
-  },
-
-  {
-    nome: 'InsuCheck',
-    desc: 'Também desenvolvido em equipe. Trata-se de um app para diabéticos',
-    stack: ['Kotlin', 'Jetpack Compose'],
-    repo: 'https://github.com/Ameglebm/AppPipocaAgil',
-    imagem: '/img/insucheck.png',
-  },
 
 ]

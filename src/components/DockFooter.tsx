@@ -1,4 +1,3 @@
-// components/DockFooter.tsx
 import { useState, useEffect } from 'react'
 import { FiHome, FiUser, FiFolder } from 'react-icons/fi'
 import { motion, AnimatePresence } from 'framer-motion'
@@ -16,7 +15,7 @@ const navItems = [
   },
 ]
 
-export default function FooterDock() {
+export default function DockFooter() {
   const [hovered, setHovered] = useState('')
   const [active, setActive] = useState('topo')
   const [showDock, setShowDock] = useState(true)
@@ -39,22 +38,20 @@ export default function FooterDock() {
       const windowHeight = window.innerHeight
       const docHeight = document.documentElement.scrollHeight
 
-      // Sumir dock no final da página
       const isBottom = scrollTop + windowHeight >= docHeight - 10
 
-      // Detectar seção projetos
       const projetosEl = document.getElementById('projetos')
       let isInProjetos = false
       if (projetosEl) {
         const projetosTop = projetosEl.offsetTop
         const projetosHeight = projetosEl.offsetHeight
-        // Se a viewport tá dentro da seção projetos (ou perto dela)
-        isInProjetos = scrollTop + windowHeight / 2 >= projetosTop && scrollTop < projetosTop + projetosHeight
+        isInProjetos =
+          scrollTop + windowHeight / 2 >= projetosTop &&
+          scrollTop < projetosTop + projetosHeight
       }
 
       setShowDock(!isBottom && !isInProjetos)
 
-      // Atualizar bolinha verde conforme scroll (só se dock estiver visível)
       if (!isBottom && !isInProjetos) {
         let currentActive = 'topo'
         for (const { id } of navItems) {
@@ -67,13 +64,11 @@ export default function FooterDock() {
           }
         }
         setActive(currentActive)
-      } else {
-        setActive('')
       }
     }
 
     window.addEventListener('scroll', handleScroll)
-    handleScroll() // pra rodar na carga
+    handleScroll()
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
@@ -81,32 +76,32 @@ export default function FooterDock() {
     <AnimatePresence>
       {showDock && (
         <motion.footer
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 50, x: '-50%' }}
+          animate={{ opacity: 1, y: 0, x: '-50%' }}
+          exit={{ opacity: 0, y: 50, x: '-50%' }}
           transition={{ duration: 0.4, ease: 'easeOut' }}
-          className="fixed bottom-6 left-1/2 transform -translate-x-1/2 bg-white bg-opacity-80 backdrop-blur-md rounded-full px-6 py-3 flex gap-8 shadow-lg z-50"
+          className="fixed bottom-6 bg-white bg-opacity-80 backdrop-blur-md rounded-full px-6 py-3 flex items-center gap-6 shadow-lg z-50 max-w-md"
+          style={{ left: '50%', transform: 'translateX(-50%)' }}
         >
           {navItems.map(({ id, icon, label, href }, index) => {
-            const isSeparator = index === 3
+            const isLastItem = index === navItems.length - 1
 
             return (
-              <div key={id} className="flex items-center gap-4">
-                {isSeparator && (
-                  <span className="text-gray-500 opacity-40 text-2xl select-none">|</span>
-                )}
+              <div key={id} className="flex items-center gap-6">
                 <button
                   onClick={() => scrollTo(id, href)}
                   onMouseEnter={() => setHovered(id)}
                   onMouseLeave={() => setHovered('')}
-                  className="relative flex flex-col items-center justify-center text-gray-800 focus:outline-none transition-transform transform hover:scale-125 hover:text-green-500"
+                  className={`relative flex flex-col items-center justify-center
+                    text-gray-800 focus:outline-none transition-transform transform
+                    hover:scale-125 hover:text-green-500 cursor-pointer`}
                   aria-label={label}
                 >
                   {icon}
                   <span
                     className={`absolute -bottom-1.5 w-1 h-1 rounded-full bg-green-500 transition-opacity
-                      ${active === id && !href ? 'opacity-100' : 'opacity-0'}`}
-                  ></span>
+                    ${active === id && !href ? 'opacity-100' : 'opacity-0'}`}
+                  />
                   <AnimatePresence>
                     {hovered === id && (
                       <motion.span
@@ -121,6 +116,10 @@ export default function FooterDock() {
                     )}
                   </AnimatePresence>
                 </button>
+
+                {!isLastItem && (
+                  <span className="text-gray-500 opacity-40 text-2xl select-none">|</span>
+                )}
               </div>
             )
           })}
